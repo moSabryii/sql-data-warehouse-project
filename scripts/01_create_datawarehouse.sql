@@ -30,22 +30,13 @@ USE DataWarehouse;
 GO
 
 -- Create Bronze schema (raw / ingestion layer)
-IF NOT EXISTS (SELECT 1 FROM sys.schemas WHERE name = 'bronze')
-BEGIN
-    EXEC ('CREATE SCHEMA bronze');
-END
+CREATE SCHEMA bronze;
 GO
 
 -- Create Silver schema (cleaned / transformed layer)
-IF NOT EXISTS (SELECT 1 FROM sys.schemas WHERE name = 'silver')
-BEGIN
-    EXEC ('CREATE SCHEMA silver');
-END
+CREATE SCHEMA silver;
 GO
 
 -- Create Gold schema (business / reporting layer)
-IF NOT EXISTS (SELECT 1 FROM sys.schemas WHERE name = 'gold')
-BEGIN
-    EXEC ('CREATE SCHEMA gold');
-END
+CREATE SCHEMA gold;
 GO
